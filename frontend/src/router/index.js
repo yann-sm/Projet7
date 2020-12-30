@@ -14,17 +14,17 @@ const routes = [
       component: Home
     },
     {
-      path: '/post/:id',
+      path: '/Post/:id',
       name: 'Post',
       component: Post
     },
     {
-      path: '/signup',
+      path: '/Signup',
       name: 'Signup',
       component: Signup//() => import('../views/Signup.vue')
     },
     {
-      path: '/profile',
+      path: '/Profile',
       name: 'Profile',
       component: Profile//() => import('../views/Profile.vue')
     }
@@ -33,6 +33,6 @@ const routes = [
 
 const router = new VueRouter({
   routes
-})
+});
 
 export default router;

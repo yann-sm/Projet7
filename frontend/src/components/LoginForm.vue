@@ -4,7 +4,7 @@
         <img src="../assets/icon-left-font-monochrome-black.png" alt="logo groupomania">
         <nav>
             <router-link to="/" class="active">Se connecter</router-link> | 
-            <router-link to="/signup">S'inscrire</router-link>
+            <router-link to="/Signup">S'inscrire</router-link>
         </nav>
         <form @submit.prevent= login()>
             <label for="login-email">Email :</label>

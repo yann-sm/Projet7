@@ -4,7 +4,7 @@
             <img src="../assets/icon-left-font-monochrome-black.png" alt="logo groupomania">
             <nav>
                 <router-link to="/">Se connecter</router-link> | 
-                <router-link to="/signup" class="active">S'inscrire</router-link>
+                <router-link to="/Signup" class="active">S'inscrire</router-link>
             </nav>
             <label for="signup-nom">Nom :</label>
             <input id="signup-nom" type="text" placeholder="Nom" required>

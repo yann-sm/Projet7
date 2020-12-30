@@ -3,9 +3,9 @@
 <template>
     <div class="userPost">
         <div v-for="post in posts" :key="post.id">
-            <router-link :to="{ name: 'Post', params: { id: post.id}}">
+            <router-link :to="{ name: 'Post', params: { id: post.id }}">
                 <div class="post">
-                    {{post.title}}
+                    {{ post.title }}
                 </div>
             </router-link>
         </div>
