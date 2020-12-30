@@ -1,6 +1,7 @@
 
 <template>
     <div class="posts">
+        <h1>Vos publications :</h1>
         <article class="post" v-for="post in posts" :key="post.id">
             <router-link :to="{ name: 'Post', params: { id: post.id} }">
                 <div class="post-header">
@@ -66,10 +67,13 @@ export default {
 </script>
 
 <style scoped>
-    .posts{
+    .posts {
         margin: 0 auto;
         padding: 20px;
         max-width: 800px;
+    }
+    h1 {
+        text-shadow: 10px 10px 60px red;
     }
     .post {
         position: relative;
@@ -77,6 +81,7 @@ export default {
         margin-bottom: 25px;
         border: 1px solid black;
         border-radius: 5px;
+
     }
     .post:hover {
         box-shadow: 0px 0px 50px -7px red;

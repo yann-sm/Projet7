@@ -1,20 +1,23 @@
 
 
 <template>
-    <div class="header">
-        <router-link to="/">
-            <h1>
-                <img src="/assets/icon.png" alt="logo groupomania">
-            </h1>
-        </router-link>
-
-        <nav>
-            <router-link to="/profile">
-                <div>Mon compte</div>
+    <div>
+        <div class="header">
+            <router-link to="/">
+                <h1>
+                    <img src="../assets/icon-left-font.png" alt="logo groupomania">
+                </h1>
             </router-link>
-            <div id="disconnect-btn" @click = disconnect()>Se déconnecter</div>
-        </nav>
-    </div>
+
+            <nav>
+                <router-link to="/profile">
+                    <div>Mon compte</div>
+                </router-link>
+                <div id="disconnect-btn" @click = disconnect()>Se déconnecter</div>
+            </nav>
+        </div>
+    <div class="hr"></div>
+</div>
 </template>
 
 <script>
@@ -51,6 +54,10 @@ export default {
     }
     nav div:hover {
         color: green;
+    }
+    .hr {
+        width: 100%;
+        border: 1px solid black;
     }
 
     @media (max-width: 670px){

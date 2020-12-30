@@ -4,7 +4,7 @@
     <LoginForm v-if="!connected"/>
     <Header v-if="connected"/>
     <NewPost v-if="connected"/>
-    <Posts v-if="connected"/>
+    <Posts v-if="connected"/><!-- v-if="connected" ou v-if="!connected" -->
   </div>
 </template>
 
@@ -14,13 +14,14 @@ import Header from '@/components/Header.vue';
 import Posts from '@/components/Posts.vue';
 import NewPost from '@/components/NewPost.vue';
 
+
 export default {
   name: 'Home',
   components:{
-    LoginForm,
+    LoginForm, 
     Header,
     Posts,
-    NewPost
+    NewPost,
   },
   data(){
         return{
