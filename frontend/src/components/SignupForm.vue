@@ -1,10 +1,10 @@
 <template>
     <div class="wrapper">
-        <form @submit.prevent=signup()>
-            <img src="/asset/icon.png" alt="logo groupomania">
+        <form @submit.prevent= signup()>
+            <img src="../assets/icon.png" alt="logo groupomania">
             <nav>
                 <router-link to="/">Se connecter</router-link> | 
-                <router-link to="/signup">S'inscrire</router-link>
+                <router-link to="/signup" class="active">S'inscrire</router-link>
             </nav>
             <label for="signup-nom">Nom :</label>
             <input id="signup-nom" type="text" placeholder="Nom" required>
@@ -20,6 +20,10 @@
 
             <label for="signup-password-verification">Vérification du mot de passe :</label>
             <input id="signup-password-verification" type="password" placeholder="Mot de passe" required>
+
+            <div class="error-message">{{ message }}</div>
+
+            <button id="signup-btn" type="submit">S'inscrire</button>
         </form>    
     </div>
 </template>
@@ -82,5 +86,35 @@ export default {
     nav {
         font-size: 1.05rem;
         margin: 20px;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    form label {
+        font-weight: bold;
+    }
+    form input {
+        text-align: center;
+        padding: 5px;
+        font-size: 1rem;
+        border-radius: 5px;
+        border: 1px solid black;
+    }
+    .active {
+        color: green;
+    }
+    #signup-btn {
+       background-color: black;
+        color: white;
+        font-weight: bold;
+        font-size: 1rem;
+        border: 1px solid black;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    #signup-btn:hover {
+        background-color: red;
+        color: black; 
     }
 </style>
