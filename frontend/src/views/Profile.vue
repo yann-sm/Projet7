@@ -10,6 +10,8 @@
 </template>
 
 <script>
+//import des différents composents pour la page profile :
+//@ est un alias pour src -
 import LoginForm from '@/components/LoginForm.vue';
 import Header from '@/components/Header.vue';
 import UserProfile from '@/components/UserProfile.vue';
@@ -29,7 +31,7 @@ export default {
         };
     },
 
-    created(){
+    created(){ //fonction de cycle de vie, pour dire quand affiché un contenu
         this.checkConnected()
     },
 

@@ -32,7 +32,7 @@ export default {
         };
     },
     methods:{
-        login(){
+        login(){//methode pour la connection
             const email = document.getElementById("login-email").value;
             const password = document.getElementById("login-password").value;
 
@@ -42,7 +42,7 @@ export default {
                 password
             },
             {
-                headers: { 'Content-type': 'application/json'}
+                headers: { 'Content-type': 'application/json'}//format de données de la requête
             })
             .then(res => {
                 localStorage.setItem('user', JSON.stringify(res.data));
@@ -78,9 +78,11 @@ export default {
         margin: 20px;
     }
     .active {
-        color: green;
         font-weight: bold;
+        font-size: 1.3rem;
+        text-shadow: 0px 4px 5px #42b983;
     }
+
     form {
         display: flex;
         flex-direction: column;

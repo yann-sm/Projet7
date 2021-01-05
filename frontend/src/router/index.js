@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+//omport des différnetes vue :
 import Home from '../views/Home.vue'
 import Post from '../views/Post.vue'
 import Signup from '../views/Signup.vue'
@@ -9,14 +10,14 @@ Vue.use(VueRouter)
 
 const routes = [    
     {
-      path: '/',
-      name: 'Home',
-      component: Home
+      path: '/', //url correspondant au chemin du composant
+      name: 'Home', //le nom de cette route pour l'étiquetage et le débuggage 
+      component: Home //le composant qui doit s'afficher lorsque le path est trouvé
     },
     {
       path: '/Post/:id',
       name: 'Post',
-      component: Post
+      component: Post//() => import('../views/Post.vue')
     },
     {
       path: '/Signup',

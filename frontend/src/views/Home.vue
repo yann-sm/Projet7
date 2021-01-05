@@ -1,14 +1,18 @@
 
 <template>
   <div class="home">
+    <!--si different de connecté, affiche la page de connection-->
     <LoginForm v-if="!connected"/>
+    <!--si connécté, affiche header, newpost et post-->
     <Header v-if="connected"/>
     <NewPost v-if="connected"/>
-    <Posts v-if="connected"/><!-- v-if="connected" ou v-if="!connected" -->
+    <Posts v-if="connected"/>
   </div>
 </template>
 
 <script>
+//import des différents composents pour la page d'acceuil :
+//@ est un alias pour src -
 import LoginForm from '@/components/LoginForm.vue';
 import Header from '@/components/Header.vue';
 import Posts from '@/components/Posts.vue';

@@ -1,11 +1,11 @@
 
 <template>
     <div class="posts">
-        <h1>Vos publications :</h1>
+        <h1>Vos publications :</h1><!--Titte a supprimer-->
         <article class="post" v-for="post in posts" :key="post.id">
             <router-link :to="{ name: 'Post', params: { id: post.id} }">
                 <div class="post-header">
-                    <span class="post-info">Posté le {{dateFormat(post.date)}}</span>
+                    <span class="post-info">Posté le {{ dateFormat(post.date) }}</span>
                     <span class="post-modify" v-if="post.userId === $user.userId || $user.admin === 1">Modifier</span>
                 </div>
                 <h2 class="post-title">{{ post.title }}</h2>

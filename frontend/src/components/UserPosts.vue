@@ -13,6 +13,10 @@
 </template>
 
 <script>
+/*
+Axios est une bibliothèque Javascript fonctionnant comme un client Http.
+Elle permet de communiquer avec des APIen utilisant des requêtes.
+*/
 import axios from 'axios';
 
 export default {
@@ -33,8 +37,8 @@ export default {
             axios.get(`${this.$apiUrl}/posts/user${userId}/posts`,
             {
                 headers:{
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${this.$token}`
+                    'Content-Type': 'application/json',//attend un format json
+                    'Authorization': `Bearer ${this.$token}`//option pour envoyer une Authorization header avec un access_token Bearer avec la requête GET
                 }
             })
             .then(res => this.posts = res.data)

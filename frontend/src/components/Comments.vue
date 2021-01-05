@@ -27,7 +27,7 @@ export default {
     name: 'Comments',
     data(){
         return{
-            comment: []
+            comments: []
         }
     },
     mounted(){
@@ -39,7 +39,7 @@ export default {
             const userId = this.$user.userId;
             const content = document.getElementById("new-content").value;
 
-            axios.post(`${this.$apiUrl}/posts/${postId}/comment/`,
+            axios.post(`${this.$apiUrl}/posts/${postId}/comments/`,
                 {
                     userId, 
                     content
@@ -69,7 +69,7 @@ export default {
         },
 
         deleteComment(commentId){
-            axios.delete(`${this.$apiUrl}/posts/comment/${commentId}`,
+            axios.delete(`${this.$apiUrl}/posts/comments/${commentId}`,
             {
                 headers:{
                     'Content-Type': 'application/json',

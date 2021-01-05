@@ -1,14 +1,14 @@
 
-
+<!--On définit le html entre les balise template-->
 <template>
     <div>
         <div class="header">
-            <router-link to="/">
+            <router-link to="/"><!-- router-link : ce composant permet la navigation de l'utilisateur dans l'application comme la balise anchor-->
                 <h1>
                     <img src="../assets/icon-left-font.png" alt="logo groupomania">
                 </h1>
             </router-link>
-
+            <!--Nvaigation principal-->
             <nav>
                 <router-link to="/Profile">
                     <div>Mon compte</div>
@@ -20,10 +20,12 @@
 </div>
 </template>
 
+<!--On définit le javascript entre les balises script-->
 <script>
 export default {
     name: 'Header',
     methods:{
+        //method pour se deconnecté en supprimant l'utilisateur du localstorage et en rechargent la page
         disconnect(){
             localStorage.removeItem('user');
             location.href = "/";
@@ -32,12 +34,14 @@ export default {
 }
 </script>
 
+<!--On définit le css entre les balise style, scoped limite la porté du css uniquement à cette page-->
 <style scoped>
     .header {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 30px 70px 30px 70px;
+        margin-top: -120px;
     }
     .header img {
         width: 250px;
@@ -56,7 +60,7 @@ export default {
         color: green;
     }
     .hr {
-        width: 100%;
+        width: 95%;
         border: 1px solid black;
     }
 

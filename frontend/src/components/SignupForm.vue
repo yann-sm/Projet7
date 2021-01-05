@@ -4,7 +4,7 @@
             <img src="../assets/icon-left-font-monochrome-black.png" alt="logo groupomania">
             <nav>
                 <router-link to="/">Se connecter</router-link> | 
-                <router-link to="/Signup" class="active">S'inscrire</router-link>
+                <router-link to="/Signup" class="active" >S'inscrire</router-link>
             </nav>
             <label for="signup-nom">Nom :</label>
             <input id="signup-nom" type="text" placeholder="Nom" required>
@@ -29,6 +29,10 @@
 </template>
 
 <script>
+/*
+Axios est une bibliothèque Javascript fonctionnant comme un client Http.
+Elle permet de communiquer avec des API en utilisant des requêtes client http basé sur les promesses,.
+*/
 import axios from 'axios';
 
 export default {
@@ -38,7 +42,7 @@ export default {
             message: "",
         };
     },
-    methods:{
+    methods:{//method pour l'inscription
         signup(){
             const nom = document.getElementById("signup-nom").value;
             const prenom = document.getElementById("signup-prenom").value;
@@ -46,7 +50,10 @@ export default {
             const password = document.getElementById("signup-password").value;
             const passwordVerif = document.getElementById("signup-password-verification").value;
 
-            if(password === passwordVerif){
+            /*if(password === passwordVerif){//si password est egal à passwordVerif
+                location.href = '/';
+            }*/
+            if(password === passwordVerif){//si password est egal à passwordVerif
                 axios.post(`${this.$apiUrl}/auth/signup`,
                 {
                     nom,
@@ -54,20 +61,20 @@ export default {
                     password,
                     email
                 },{
-                    headers: {'content-Type': 'application/json'}
+                    headers: {'Content-Type': 'application/json'}//format de données de la requête
                 })
-                .then(res => {
-                    if(res.status ==201){
+                .then(res => {//on traite la suite une fois la réponse obtenue
+                    if(res.status === 201){
                         location.href = '/';
                     }
                 })
-                .catch((error) => {
+                .catch((error) => {//on trite ici les erreurs éventuellement survenues
                     if(error.response.status === 401){
                         this.message = "Email non disponible.";
                     }
                 });
             }
-            else if(passwordVerif != passwordVerif){
+            else if(password != passwordVerif){//et si password est difféerent de passwordVerif  
                 this.massage = "Vérifier le mot de passe";
             }
         }
@@ -89,8 +96,10 @@ export default {
         margin: 20px;
     }
     .active {
-        color: green;
+        text-shadow: 0px 4px 5px #42b983;
         font-weight: bold;
+        font-size: 1.3rem;
+        
     }
     form {
         display: flex;
