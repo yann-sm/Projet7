@@ -39,7 +39,7 @@ exports.signup = (req, res, next) => {
 };
 
 //fonction pour connecter des utilisateurs existant :
-exposrts.login = (res, req, next) => {
+exports.login = (res, req, next) => {
     //cryptage de l'email
     const emailCrypted = encode(req.body.email);
     //recherche de l'utilisateur dans la base de données

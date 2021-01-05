@@ -5,7 +5,7 @@ const router = express.Router();
 //on associe les fonction au différentes route de produit en important les controllers :
 const userCtrl = require('../controllers/post');
 //import des middlewares :
-const auth = require('../middleware/auth');
+const auth = require('../middlewares/auth');
 
 //route get
 router.get('/', auth, userCtrl.getAllPost);

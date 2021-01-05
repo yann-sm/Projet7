@@ -32,7 +32,7 @@ exports.newComment = (req, res, next) => {
 };
 
 //fonction pour récupérer tous les commentaires
-exports.getAllComments = (req, req, next) => {
+exports.getAllComments = (req, res, next) => {
 
 };
 
