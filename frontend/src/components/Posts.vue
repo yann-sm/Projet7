@@ -6,7 +6,7 @@
             <router-link :to="{ name: 'Post', params: { id: post.id} }">
                 <div class="post-header">
                     <span class="post-info">Posté le {{ dateFormat(post.date) }}</span>
-                    <span class="post-modify" v-if="post.userId === $user.userId || $user.admin === 1">Modifier</span>
+                    <span class="post-modify" v-if="post.userId === $user.userId">Modifier</span>
                 </div>
                 <h2 class="post-title">{{ post.title }}</h2>
                 <div class="post-content" v-html="characterLimit(post.content)"></div>

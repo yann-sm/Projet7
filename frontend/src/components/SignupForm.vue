@@ -50,16 +50,13 @@ export default {
             const password = document.getElementById("signup-password").value;
             const passwordVerif = document.getElementById("signup-password-verification").value;
 
-            /*if(password === passwordVerif){//si password est egal à passwordVerif
-                location.href = '/';
-            }*/
             if(password === passwordVerif){//si password est egal à passwordVerif
                 axios.post(`${this.$apiUrl}/auth/signup`,
                 {
                     nom,
                     prenom,
-                    password,
-                    email
+                    email,
+                    password
                 },{
                     headers: {'Content-Type': 'application/json'}//format de données de la requête
                 })

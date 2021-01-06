@@ -3,8 +3,6 @@ const express = require('express');
 const cors = require('cors');
 //on importe body-parser pour être capable d'extraire l'objet JSON d'une demande :
 const bodyParser  = require('body-parser');
-//import de path pour accédé au path de notre server :
-const path = require('path');
 //sécurité :
 /*helmet pour la sécurité de l'app. Sécurise les requête http, les en-têtes, contrôle la prélécture DNS des navigateurs,
 empêche le détournement de clics, ajoute une protection XSS, protège contre le reniflement type MIME,
@@ -37,6 +35,7 @@ app.use((req, res, next) => {
 app.use(cors());
 //transforme les données de requête POST en objet JSON exploitable :
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 /* Securité :*/
 //helmet pour la sécurité de l'app :
 app.use(helmet());
@@ -44,7 +43,8 @@ app.use(helmet());
 app.use(expressSanitizer()); 
 
 //route user
-//app.use('/api/auth', userRoute);
-//app.use('/api/posts', postRoute);
+app.use('/api/auth', userRoute);
 //route post
+app.use('/api/posts', postRoute);
+
 module.exports = app;

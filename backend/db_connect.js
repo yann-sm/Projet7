@@ -1,10 +1,10 @@
-const mysql = require('mysql'); //installé
+const mysql = require('mysql'); 
 
 
 const connect = mysql.createConnection({
     host: "localhost", //localhost
     user: "root", //nom_utilisatgeur
-    password: "root", //mot_de_passe_utilisateur ex: root ou Doudou35
+    password: "Doudou35", //mot_de_passe_utilisateur ex: root ou Doudou35
     database: "Groupomania" //nom de la base de données
 });
 
@@ -22,7 +22,7 @@ module.exports = connect;
 exports.connection = mysql.createPool({
     host: 'localhost',
     user: 'root',
-    password: 'Doudou35',
+    password: 'Doudou35', //ou root
     database: 'Groupomania';
     timezone: 'local';
     charset: 'utf8mb4'

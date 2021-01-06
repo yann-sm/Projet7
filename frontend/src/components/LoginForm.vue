@@ -40,9 +40,8 @@ export default {
             {
                 email,
                 password
-            },
-            {
-                headers: { 'Content-type': 'application/json'}//format de données de la requête
+            },{
+                headers: {'Content-Type': 'application/json'}//format de données de la requête
             })
             .then(res => {
                 localStorage.setItem('user', JSON.stringify(res.data));
@@ -54,9 +53,6 @@ export default {
                 }
                 if(error.response.status === 401){
                     this.message = "Email ou mot de passe incorrecte";
-                }
-                if(error.response === 500){
-                    this.message = "Erreur serveur";
                 }
             });
         }
