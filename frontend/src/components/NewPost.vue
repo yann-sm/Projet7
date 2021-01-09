@@ -104,6 +104,11 @@ export default {
     .form-close {
         cursor: pointer;
         align-self: flex-end;
+        transition-duration: 0.3s;
+    }
+    .form-close:hover {
+        color: red;
+        font-size: 1.1rem;
     }
     .newPost-form {
         display: flex;

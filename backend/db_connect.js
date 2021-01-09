@@ -1,30 +1,22 @@
+/*Dotenv est un module sans dépandence.
+utilisation du module dotenv pour masquer les informations de connexion à la base de données
+avec des variables d'environnement : */
+require('dotenv').config();
+//import de mysql pour utilisé la base de données crée avec mysql
 const mysql = require('mysql'); 
 
-
 const connect = mysql.createConnection({
-    host: "localhost", //localhost
-    user: "root", //nom_utilisatgeur
-    password: "Doudou35", //mot_de_passe_utilisateur ex: root ou Doudou35
-    database: "Groupomania" //nom de la base de données
+    host: "localhost",//process.env.DB_HOST, //localhost
+    user: "root",//process.env.USER, //nom_utilisatgeur
+    password: "Doudou35",//process.env.PASSWORD, //mot_de_passe_utilisateur ex: root ou Doudou35
+    database: "Groupomania"//process.env.NAME //nom de la base de données
 });
 
 connect.connect(function(err){
     if(err){
-        return console.error('error:'+err.message);
+        return console.error('error:' + err.message);
     }
     console.log('Connection à la base de données réussie !');
 });
 
 module.exports = connect;
-/*
-//autre façon de se connecter a la base de données 
-
-exports.connection = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    password: 'Doudou35', //ou root
-    database: 'Groupomania';
-    timezone: 'local';
-    charset: 'utf8mb4'
-});
-*/

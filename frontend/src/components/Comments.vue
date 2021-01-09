@@ -141,5 +141,6 @@ export default {
     .delete:hover {
         color: red;
         cursor: pointer;
+        font-size: 0.9rem;
     }
 </style>
