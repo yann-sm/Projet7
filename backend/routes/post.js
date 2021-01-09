@@ -11,14 +11,15 @@ const auth = require('../middlewares/auth');
 router.get('/', auth, userCtrl.getAllPost);
 router.get('/:id', auth, userCtrl.getOnePOst);
 router.get('/:id/comments', auth, userCtrl.getAllComments);
+router.get('/user:id/posts', auth, userCtrl.getUserPosts);
 //route post
 router.post('/', auth, userCtrl.newPost);
-router.post('/', auth, userCtrl.newComment);
+router.post('/:id/comment', auth, userCtrl.newComment);
 //route put
-router.put('/', auth, userCtrl.modifyOnePost);
+router.put('/:id', auth, userCtrl.modifyOnePost);
 //route delete
-router.delete('/', auth, userCtrl.deleteOnePost);
-router.delete('/', auth, userCtrl.deleteComment);
+router.delete('/:id', auth, userCtrl.deleteOnePost);
+router.delete('/comment/:id', auth, userCtrl.deleteComment);
 
 
-module.exports = router
+module.exports = router;

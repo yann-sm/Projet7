@@ -1,7 +1,7 @@
 
 <template>
     <div class="posts">
-        <h1>Vos publications :</h1><!--Titte a supprimer-->
+        <h1>Dernière publications :</h1><!--Titte a supprimer-->
         <article class="post" v-for="post in posts" :key="post.id">
             <router-link :to="{ name: 'Post', params: { id: post.id} }">
                 <div class="post-header">
@@ -35,18 +35,17 @@ export default {
             this.getAllPost();
         });
     },
+    
     methods: {
         getAllPost(){
-            axios.get(`${this.$apiUrl}/posts/`),
+            axios.get(`${this.$apiUrl}/posts/`,
             {
                 headers:{
-                    'Content-type': 'application/json',
+                    'Content-Type': 'application/json',
                     'Authorization': `Bearer ${this.$token}`
                 }
-            }
-            .then(res => {
-                this.posts = res.data;
             })
+            .then(res => { this.posts = res.data; });
         },
         characterLimit(content){
             let text = content;
@@ -63,7 +62,7 @@ export default {
             return event.toLocaleDateString('fr-FR', options);
         }
     }
-}
+};
 </script>
 
 <style scoped>
@@ -73,7 +72,7 @@ export default {
         max-width: 800px;
     }
     h1 {
-        text-shadow: 10px 10px 60px red;
+        text-decoration: underline;
     }
     .post {
         position: relative;
@@ -81,10 +80,11 @@ export default {
         margin-bottom: 25px;
         border: 1px solid black;
         border-radius: 5px;
-
+        transition-duration: 0.2s;
     }
     .post:hover {
-        box-shadow: 0px 0px 50px -7px red;
+        box-shadow: 2px 2px 5px black;
+        border: 1px solid red;
     }
     .post-header {
         display: flex;

@@ -1,7 +1,7 @@
 
 <template>
     <div class="wrapper">
-        <img src="../assets/icon-left-font-monochrome-black.png" alt="logo groupomania">
+        <img src="../assets/logo_black.png" alt="logo groupomania">
         <nav>
             <router-link to="/" class="active">Se connecter</router-link> | 
             <router-link to="/Signup">S'inscrire</router-link>
@@ -67,7 +67,7 @@ export default {
     }
     img {
         width: 100%;
-        box-shadow: -1px 0px 5px red;
+        /*box-shadow: -1px 0px 5px #2c3e50;*/
     }
     nav {
         font-size: 1.05rem;
@@ -76,9 +76,8 @@ export default {
     .active {
         font-weight: bold;
         font-size: 1.3rem;
-        text-shadow: 0px 4px 5px #42b983;
+        color: #42b983;
     }
-
     form {
         display: flex;
         flex-direction: column;

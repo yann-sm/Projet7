@@ -76,6 +76,8 @@ export default {
     .newPost-create-btn:hover {
         background-color: red;
         color: black;
+        box-shadow: 2px 2px 5px black;
+        border: 1px solid black;
     }
     .overlay {
         position: fixed;
@@ -120,6 +122,7 @@ export default {
         overflow-y: scroll;
         border-radius: 5px;
         border: 1px solid black;
+        font-family: Avenir, Helvetica, Arial, sans-serif;
     }
     #newPost-btn {
         padding: 5px;

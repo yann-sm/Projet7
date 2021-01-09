@@ -4,9 +4,9 @@
     <div>
         <div class="header">
             <router-link to="/"><!-- router-link : ce composant permet la navigation de l'utilisateur dans l'application comme la balise anchor-->
-                <h1>
-                    <img src="../assets/icon-left-font.png" alt="logo groupomania">
-                </h1>
+                <div>
+                    <img src="../assets/logo.png" alt="logo groupomania">
+                </div>
             </router-link>
             <!--Nvaigation principal-->
             <nav>
@@ -41,11 +41,11 @@ export default {
         justify-content: space-between;
         align-items: center;
         padding: 30px 70px 30px 70px;
-        margin-top: -120px;
     }
     .header img {
         width: 250px;
         height: auto;
+        margin-bottom: 10px;
     }
     nav {
         display: flex;

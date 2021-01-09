@@ -5,7 +5,11 @@
         <div v-for="post in posts" :key="post.id">
             <router-link :to="{ name: 'Post', params: { id: post.id }}">
                 <div class="post">
-                    {{ post.title }}
+                    {{ post.title }} 
+                    <div class="post-date">
+                        <span>Posté le {{ dateFormat(post.dateCreate) }}</span>
+                    </div>
+                    
                 </div>
             </router-link>
         </div>
@@ -42,6 +46,12 @@ export default {
                 }
             })
             .then(res => this.posts = res.data)
+        },
+
+        dateFormat(date){
+            const event = new Date(date);
+            const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+            return event.toLocaleDateString('fr-FR', options);
         }
     }
 }
@@ -57,8 +67,12 @@ export default {
         margin-top: 20px;
         text-align: left;
         transition-duration: .1s;
+        border: 1px solid black;
+        border-radius: 10px;
     }
     .post:hover {
-        box-shadow: 0px 0px 50px -7px red;
+        box-shadow: 2px 2px 5px black;
+        border: 1px solid red;
     }
+   
 </style>

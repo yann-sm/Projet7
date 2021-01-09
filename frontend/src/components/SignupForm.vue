@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
         <form @submit.prevent= signup()>
-            <img src="../assets/icon-left-font-monochrome-black.png" alt="logo groupomania">
+            <img src="../assets/logo_black.png" alt="logo groupomania">
             <nav>
                 <router-link to="/">Se connecter</router-link> | 
                 <router-link to="/Signup" class="active" >S'inscrire</router-link>
@@ -86,17 +86,16 @@ export default {
     }
     img {
         width: 100%;
-        box-shadow: -1px 0px 5px red;
+        /*box-shadow: -1px 0px 5px #2c3e50;*/
     }
     nav {
         font-size: 1.05rem;
         margin: 20px;
     }
     .active {
-        text-shadow: 0px 4px 5px #42b983;
+        color: #42b983;
         font-weight: bold;
         font-size: 1.3rem;
-        
     }
     form {
         display: flex;

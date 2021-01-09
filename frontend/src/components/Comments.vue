@@ -3,16 +3,16 @@
 <template>
     <div class="comments">
         <form @submit.prevent= newComment()>
-            <label for="new-comment">Laisser un commentaire :</label>
-            <textarea name="newComment" id="new-comment" placeholder="laisser un commentaire..." cols="30" rows="10" required></textarea>
+            <label for="new-comment">Laisser un commentaire :</label><br>
+            <textarea name="newComment" id="new-comment" placeholder="laisser un commentaire..." cols="50" rows="5" required></textarea><br>
             <button type="submit" id="send-comment">Envoyer</button>
         </form>
         <h2 v-if="comments.length > 0">Commentaires :</h2>
 
         <div class="comments">
             <div class="comment" v-for="comment in comments" :key="comment.id">
-                <div class="comment-info">Par {{ comment.prenom }} {{ comment.nom }} le {{ dateFormat(comment.date) }}
-                    <span @click="deleteComment(comment.id)" v-if="comment.userId === $user.userId" :key="comment.id">Supprimer</span>
+                <div class="comment-info">Par {{ comment.prenom }} {{ comment.nom }} le {{ dateFormat(comment.dateCreate) }}
+                    <span class="delete" @click="deleteComment(comment.id)" v-if="comment.userId === $user.userId" :key="comment.id">Supprimer</span>
                 </div>
                 {{ comment.content}}
             </div>
@@ -37,17 +37,17 @@ export default {
         newComment(){
             const postId = parseInt(this.$route.params.id);
             const userId = this.$user.userId;
-            const content = document.getElementById("new-content").value;
+            const content = document.getElementById("new-comment").value;
 
-            axios.post(`${this.$apiUrl}/posts/${postId}/comments/`,
+            axios.post(`${this.$apiUrl}/posts/${postId}/comment/`,
                 {
                     userId, 
                     content
                 },
                 {
                     headers:{
-                        'Content-type': 'application/json',
-                        'Autorization': `Bearer ${this.$token}`
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${this.$token}`
                     }
                 })
                 .then(this.getAllComments());
@@ -60,7 +60,7 @@ export default {
             {
                 headers:{
                     'Content-Type': 'application/json',
-                    'Authorization': `Beaer ${this.$token}`
+                    'Authorization': `Bearer ${this.$token}`
                  }
              })
             .then(res => {
@@ -69,11 +69,11 @@ export default {
         },
 
         deleteComment(commentId){
-            axios.delete(`${this.$apiUrl}/posts/comments/${commentId}`,
+            axios.delete(`${this.$apiUrl}/posts/comment/${commentId}`,
             {
                 headers:{
                     'Content-Type': 'application/json',
-                    'Authorization': `Beaer ${this.$token}`
+                    'Authorization': `Bearer ${this.$token}`
                 }
             })
             .then(this.getAllComments());
@@ -94,20 +94,52 @@ export default {
         margin: 0 auto;
         padding: 30px;
     }
+    textarea {
+        border-radius: 5px;
+        border: 1px solid black;
+        box-shadow: 2px 2px 5px black;
+    }
     .comment {
         padding: 20px 20px 20px 30px;
+        margin-bottom: 10px;
         text-align: left;
+        border-radius: 5px;
         border: 1px solid black;
+        box-shadow: 2px 2px 5px black;
         transition-duration: .1s;
     }
     .comment-info {
         display: flex;
         justify-content: space-between;
         font-size: .8rem;
+        font-weight: bold;
         margin-bottom: 10px;
     }
     .comment-info span {
         font-weight: bold;
+        cursor: pointer;
+    }
+    #new-comment {
+        font-family: Avenir, Helvetica, Arial, sans-serif;
+        margin-left: -25px;
+    }
+    button {
+        color: white;
+        font-weight: bold;
+        background-color: black;
+        padding: 5px;
+        border: 1px solid black;
+        border-radius: 5px;
+        transition-duration: .2s;
+    }
+    button:hover {
+        cursor: pointer;
+        color: black;
+        background-color: red;
+        font-size: 1rem;
+    }
+    .delete:hover {
+        color: red;
         cursor: pointer;
     }
 </style>

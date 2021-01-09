@@ -41,7 +41,7 @@ exports.signup = (req, res, next) => {
         })
 };
 
-//fonction pour connecter des utilisateurs existant :
+//fonction pour connecter des utilisateurs existant : //OK
 exports.login = (req, res, next) => {
     //cryptage de l'email
     const emailCrypted = encode(req.body.email);
@@ -75,7 +75,7 @@ exports.login = (req, res, next) => {
         });
 };
 
-//fonction pour supprimer un utilisateur
+//fonction pour supprimer un utilisateur  //OK
 exports.deleteUser = (req, res, next) => {
     db.query(`DELETE FROM users WHERE users.id = ${req.params.id}`,
     (error, result, field) => {

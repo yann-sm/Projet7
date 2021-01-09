@@ -43,7 +43,7 @@ export default {
             {
                 headers:{
                     'Content-Type': 'application/json',
-                    'Authorization': `Beaer ${this.$token}`
+                    'Authorization': `Bearer ${this.$token}`
                 }
             })
             .then(res => {
@@ -58,13 +58,13 @@ export default {
             })
         },
 
-        deletOnePost(){
+        deleteOnePost(){
             const postId = this.$route.params.id;
             axios.delete(`${this.$apiUrl}/posts/${postId}`,
             {
                 headers:{
                     'Content-Type': 'application/json',
-                    'Authorization': `Beaer ${this.$token}`
+                    'Authorization': `Bearer ${this.$token}`
                 }
             })
             .then(location.href = "/");
@@ -84,7 +84,7 @@ export default {
             {
                 headers:{
                     'Content-Type': 'application/json',
-                    'Authorization': `Beaer ${this.$token}`
+                    'Authorization': `Bearer ${this.$token}`
                 }
             })
             .then(location.href = "/");
@@ -119,7 +119,11 @@ export default {
     #modify-title {
         margin: 0;
         margin-bottom: 20px;
-        font-size: 2rem;
+        padding: 5px;
+        font-size: 1.5rem;
+        border-radius: 5px;
+        border: 1px solid black;
+        box-shadow: 2px 2px 5px black;
     }
     #modify-content {
         margin-top: 20px;
@@ -128,6 +132,9 @@ export default {
         padding: 10px;
         resize: none;
         overflow-y: scroll;
+        border-radius: 5px;
+        border: 1px solid black;
+        box-shadow: 2px 2px 5px black;
     }
     .onePost button {
         margin-top: 20px;
@@ -137,6 +144,16 @@ export default {
         background-color: black;
         border-radius: 5px;
         cursor: pointer;
+        border: 1px solid black;
+        font-weight: bold;
+        transition-duration: .2s;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .onePost button:hover {
+        color: black;
+        background-color: red;
+        font-size: 1.3rem;
     }
 
 </style>
