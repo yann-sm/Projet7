@@ -3,7 +3,7 @@ import App from './App.vue'
 import router from './router'
 
 Vue.config.productionTip = false;
-
+//Variables globales :
 //API Url
 Vue.prototype.$apiUrl = 'http://localhost:3000/api';
 //user / token

@@ -42,7 +42,7 @@ export default {
             {
                 headers:{
                     'Content-Type': 'application/json',//attend un format json
-                    'Authorization': `Bearer ${this.$token}`//option pour envoyer une Authorization header avec un access_token Bearer avec la requête GET
+                    'Authorization': `Bearer ${this.$token}`//authentification par un token
                 }
             })
             .then(res => this.posts = res.data)

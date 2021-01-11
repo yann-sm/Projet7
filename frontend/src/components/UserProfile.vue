@@ -40,8 +40,8 @@ export default {
             axios.delete(`${this.$apiUrl}/auth/${userId}`,
             {
                 headers:{
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${this.$token}`
+                    'Content-Type': 'application/json',//type de données
+                    'Authorization': `Bearer ${this.$token}`//authentification par un token,
                 }
             })
             .then(this.visible = false)

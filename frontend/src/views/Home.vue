@@ -21,7 +21,7 @@ import NewPost from '@/components/NewPost.vue';
 
 export default {
   name: 'Home',
-  components:{
+  components:{//on appelle tous les composants présent sur cette page
     LoginForm, 
     Header,
     Posts,

@@ -40,14 +40,16 @@ export default {
             const content = document.getElementById("new-comment").value;
 
             axios.post(`${this.$apiUrl}/posts/${postId}/comment/`,
-                {
+                {//envoie des données rentrée 
                     userId, 
                     content
                 },
-                {
+                {/*objet de configuration headers, contenant une en-tête pour le type de données 
+                    et une en-tête d'authentification par un token, afin de protéger les données et de données 
+                    accès au porteur de ce token*/
                     headers:{
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${this.$token}`
+                        'Content-Type': 'application/json',//type de données
+                        'Authorization': `Bearer ${this.$token}`//authentification par un token
                     }
                 })
                 .then(this.getAllComments());

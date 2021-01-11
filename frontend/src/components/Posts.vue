@@ -5,7 +5,7 @@
         <article class="post" v-for="post in posts" :key="post.id">
             <router-link :to="{ name: 'Post', params: { id: post.id} }">
                 <div class="post-header">
-                    <span class="post-info">Posté le {{ dateFormat(post.date) }}</span>
+                    <span class="post-info">Par {{ post.nom }} {{ post.prenom }} - Posté le {{ dateFormat(post.date) }} </span>
                     <span class="post-modify" v-if="post.userId === $user.userId">Modifier</span>
                 </div>
                 <h2 class="post-title">{{ post.title }}</h2>
