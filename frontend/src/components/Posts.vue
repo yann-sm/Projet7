@@ -80,6 +80,7 @@ export default {
         margin-bottom: 25px;
         border: 1px solid black;
         border-radius: 5px;
+        background-color: #D3D3D3;
         transition-duration: 0.2s;
     }
     .post:hover {
@@ -94,7 +95,7 @@ export default {
         font-weight: bold;
     }
     .post-title {
-        color: green;
+        color: #002766/*green;*/
     }
     .post-content {
         font-size: .9rem;

@@ -60,8 +60,8 @@ export default {
         color: green;
     }
     .hr {
-        width: 95%;
-        border: 1px solid black;
+        width: 100%;
+        border: 1px solid red;
     }
 
     @media (max-width: 670px){

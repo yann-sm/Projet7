@@ -143,7 +143,7 @@ export default {
         padding: 10px;
         font-size: 1.1rem;
         color: white;
-        background-color: black;
+        background-color: #002766;/*black;*/
         border-radius: 5px;
         cursor: pointer;
         border: 1px solid black;
@@ -153,7 +153,7 @@ export default {
         margin-right: 5px;
     }
     .onePost button:hover {
-        color: black;
+        color: #002766;/*black;*/
         background-color: red;
         font-size: 1.3rem;
     }

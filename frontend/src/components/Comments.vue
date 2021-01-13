@@ -128,7 +128,7 @@ export default {
     button {
         color: white;
         font-weight: bold;
-        background-color: black;
+        background-color: #002766;/*black;*/
         padding: 5px;
         border: 1px solid black;
         border-radius: 5px;
@@ -136,7 +136,7 @@ export default {
     }
     button:hover {
         cursor: pointer;
-        color: black;
+        color: #002766;/*black;*/
         background-color: red;
         font-size: 1rem;
     }

@@ -68,7 +68,7 @@ export default {
         margin: 30px auto;
         padding: 5px;
         border-radius: 10px;
-        background-color: black;
+        background-color: #002766;/*black;*/
         color: white;
         max-width: 750px;
         font-size: 1.5rem;
@@ -77,7 +77,7 @@ export default {
     }
     .newPost-create-btn:hover {
         background-color: red;
-        color: black;
+        color: #002766;;
         box-shadow: 2px 2px 5px black;
         border: 1px solid black;
     }
@@ -95,7 +95,7 @@ export default {
     }
     .form-wrapper {
         box-sizing: border-box;
-        background-color: white;
+        background-color: #002766;/*white */
         display: flex;
         flex-direction: column;
         padding: 5%;
@@ -107,10 +107,14 @@ export default {
         cursor: pointer;
         align-self: flex-end;
         transition-duration: 0.3s;
+        color: white;
     }
     .form-close:hover {
         color: red;
         font-size: 1.1rem;
+    }
+    label {
+        color: white;
     }
     .newPost-form {
         display: flex;
@@ -120,6 +124,8 @@ export default {
     #newPost-title {
         border-radius: 5px;
         border: 1px solid black;
+        font-size: 1rem;
+        padding: 5px;
     }
     #newPost-content {
         height: 200px;
@@ -129,6 +135,7 @@ export default {
         overflow-y: scroll;
         border-radius: 5px;
         border: 1px solid black;
+        font-size: 0.9rem;
         font-family: Avenir, Helvetica, Arial, sans-serif;
     }
     #newPost-btn {
