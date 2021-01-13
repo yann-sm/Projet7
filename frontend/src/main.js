@@ -3,7 +3,10 @@ import App from './App.vue'
 import router from './router'
 
 Vue.config.productionTip = false;
-//Variables globales :
+//création de variables globales avec vue.prototype:
+/* $ est utilisé dans vue pour identifier les propriétés qui peuvent 
+être utilisées dans toutes les instances disponibles dans un projet Vue.
+*/
 //API Url
 Vue.prototype.$apiUrl = 'http://localhost:3000/api';
 //user / token

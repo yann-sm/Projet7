@@ -129,12 +129,14 @@ export default {
         margin-top: 20px;
         height: 200px;
         width: calc(100% - 22px);
+        font-size: 0.9rem;
         padding: 10px;
         resize: none;
         overflow-y: scroll;
         border-radius: 5px;
         border: 1px solid black;
         box-shadow: 2px 2px 5px black;
+        font-family: Avenir, Helvetica, Arial, sans-serif;
     }
     .onePost button {
         margin-top: 20px;

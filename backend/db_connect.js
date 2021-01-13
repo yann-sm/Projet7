@@ -6,10 +6,10 @@ require('dotenv').config();
 const mysql = require('mysql'); 
 
 const connect = mysql.createConnection({
-    host: "localhost",//process.env.DB_HOST, //localhost
-    user: "root",//process.env.USER, //nom_utilisatgeur
-    password: "Doudou35",//process.env.PASSWORD, //mot_de_passe_utilisateur ex: root ou Doudou35
-    database: "Groupomania"//process.env.NAME //nom de la base de données
+    host: process.env.DB_HOST, //localhost
+    user: process.env.USER, //nom_utilisatgeur
+    password: process.env.PASSWORD, //mot_de_passe_utilisateur ex: root ou Doudou35
+    database: process.env.NAME //nom de la base de données
 });
 
 connect.connect(function(err){

@@ -123,7 +123,7 @@ export default {
     }
     #new-comment {
         font-family: Avenir, Helvetica, Arial, sans-serif;
-        margin-left: -25px;
+        width: 100%;
     }
     button {
         color: white;
