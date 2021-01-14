@@ -6,7 +6,7 @@
             <router-link :to="{ name: 'Post', params: { id: post.id} }">
                 <div class="post-header">
                     <span class="post-info">Par {{ post.nom }} {{ post.prenom }} - Posté le {{ dateFormat(post.date) }} </span>
-                    <span class="post-modify" v-if="post.userId === $user.userId">Modifier</span>
+                    <span class="post-modify" v-if="post.userId === $user.userId || $user.admin === 1">Modifier</span>
                 </div>
                 <h2 class="post-title">{{ post.title }}</h2>
                 <div class="post-content" v-html="characterLimit(post.content)"></div>
@@ -86,6 +86,7 @@ export default {
     .post:hover {
         box-shadow: 2px 2px 5px black;
         border: 1px solid red;
+        background-color: white;
     }
     .post-header {
         display: flex;

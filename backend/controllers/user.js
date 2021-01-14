@@ -61,6 +61,7 @@ exports.login = (req, res, next) => {
                             userId: results[0].id,
                             nom: results[0].nom,
                             prenom: results[0].prenom,
+                            admin: results[0].admin, 
                             token: jwt.sign(
                                 { userId: results[0].id},
                                 'RANDOM_TOKEN_SECRET',//clé de cryptage test
