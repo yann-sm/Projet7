@@ -25,7 +25,7 @@ exports.signup = (req, res, next) => {
             //la fonction asynchrone hash nous renvoie une promise dans lequelle se trouve le hash généré 
             bcrypt.hash(req.body.password, 10)
                 .then(passwordCrypted => {
-                db.query(`INSERT INTO users VALUES (NULL, '${req.body.nom}', '${req.body.prenom}', '${passwordCrypted}', '${emailCrypted}')`,
+                db.query(`INSERT INTO users VALUES (NULL, '${req.body.nom}', '${req.body.prenom}', '${passwordCrypted}', '${emailCrypted}', DEFAULT)`,
                     (err, results, fields) =>{
                         if(err){
                             console.log(err);

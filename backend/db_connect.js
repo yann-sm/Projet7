@@ -20,3 +20,8 @@ connect.connect(function(err){
 });
 
 module.exports = connect;
+
+/*
+error:ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol 
+requested by server; consider upgrading MySQL client
+*/
