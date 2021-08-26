@@ -32,7 +32,10 @@ Pour ce connecter avec l'administrateur :
   - email : jean@outlook.com
   - mot de passe : victor
   
+  Capture d'écran :
+  page de connexion :
   ![Capture d’écran 2021-08-26 à 18 05 13](https://user-images.githubusercontent.com/45094296/131002526-b8c5776c-a4fd-4d7d-8ce1-572dccfc9c77.png)
+  page principal :
 ![Capture d’écran 2021-08-26 à 18 05 26](https://user-images.githubusercontent.com/45094296/131002616-5a68ba78-db0c-4b23-b133-42c4ad482039.png)
 ![Capture d’écran 2021-08-26 à 18 06 36](https://user-images.githubusercontent.com/45094296/131002659-4f580706-e23a-461b-bf4f-b85bb3f099ad.png)
 ![Capture d’écran 2021-08-26 à 18 06 50](https://user-images.githubusercontent.com/45094296/131002664-3b783cd0-28dc-4290-9f85-8f555e854e48.png)
